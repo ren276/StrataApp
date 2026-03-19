@@ -1,0 +1,23 @@
+# Android/IntelliJ
+*.iml
+.gradle/
+local.properties
+.idea/
+build/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# VS Code
+.vscode/
+
+# Kotlin
+.kotlin/
+
+# Logs and OS files
+*.log
+.DS_Store
+Thumbs.db
+
+# Supabase
+supabase/.temp/

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Strata - Strava Stats Overlay</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#fa6000",
+                        "strava": "#FC6100",
+                        "background-light": "#f8f6f5",
+                        "background-dark": "#121212",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+        .glass-panel {
+            background: rgba(18, 18, 18, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .hero-gradient {
+            background: linear-gradient(to bottom, rgba(18, 18, 18, 0.2) 0%, rgba(18, 18, 18, 0.8) 70%, rgba(18, 18, 18, 1) 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-white overflow-hidden">
+<!-- Main Mobile Container -->
+<div class="relative h-screen w-full max-w-md mx-auto overflow-hidden flex flex-col shadow-2xl bg-background-dark">
+<!-- Background Image with Overlay -->
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-center bg-cover scale-110" data-alt="A professional cyclist riding fast on a mountain road at sunset" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDpoNnvYoifleubqb85_TEn-9Uj78IYIayhjbB5E-vEJhwk2MU7CwbOe7wxCm2w5S-w9ap8tSpVDO2mffvdnGDtbO4S2Hm0MH6qCSukuLQoI1haUzQf0Ru6EvJ8QfbYfJEm3lIW57yDpzSDoYR8HHlFNlpx0Niuki5kd00sjxQoO3TQx3kJAWW8Qwio0fzvG6rsNeXKz6vPbhzPIGxCIaXJEGwfoQZs7HF4qgRYUzm6fFsAdXWZQTuxa0J2KiMAme6-J6IvidV72wM');">
+</div>
+<div class="absolute inset-0 hero-gradient"></div>
+</div>
+<!-- Content Layer -->
+<div class="relative z-10 flex flex-col h-full px-6 pt-12 pb-8">
+<!-- Header/Logo Area -->
+<div class="flex flex-col items-center gap-2 mb-auto">
+<div class="bg-primary p-3 rounded-xl shadow-lg shadow-primary/30">
+<span class="material-symbols-outlined text-white text-3xl" style="font-variation-settings: 'FILL' 1">bolt</span>
+</div>
+<h2 class="text-2xl font-extrabold tracking-tight text-white mt-2">Strata</h2>
+</div>
+<!-- Typography Block -->
+<div class="mb-10 text-center">
+<h1 class="text-4xl font-extrabold leading-[1.1] tracking-tight text-white mb-4">
+                    Total Liberty for your <span class="text-primary">Strava</span> Stats.
+                </h1>
+<p class="text-lg text-white/80 font-light leading-relaxed px-2">
+                    Create professional-grade social media overlays with 3D transformations.
+                </p>
+</div>
+<!-- Action Area -->
+<div class="space-y-4">
+<!-- Primary Connect Button -->
+<button class="w-full bg-strava hover:bg-strava/90 text-white font-bold py-5 px-6 rounded-full flex items-center justify-center gap-3 transition-all active:scale-[0.98] shadow-xl shadow-strava/20 group">
+<svg class="w-6 h-6" fill="currentColor" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.387 17.944l-2.089-4.116h-3.065L15.387 24l5.15-10.172h-3.066l-2.084 4.116zM10.267 7.848l1.89 3.711h3.065L10.267 2 5.118 11.559h3.066l2.083-3.711z"></path>
+</svg>
+<span class="text-lg">Connect with Strava</span>
+</button>
+<!-- Secondary Option -->
+<button class="w-full bg-white/10 border border-white/20 text-white font-medium py-4 px-6 rounded-full flex items-center justify-center gap-2 hover:bg-white/20 transition-all">
+<span>Explore Examples</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<!-- Footer Legal -->
+<footer class="mt-8 text-center">
+<p class="text-[11px] text-white/50 leading-relaxed uppercase tracking-widest">
+                    By continuing, you agree to our <br/>
+<a class="underline hover:text-primary transition-colors" href="#">Terms of Service</a> &amp; <a class="underline hover:text-primary transition-colors" href="#">Privacy Policy</a>
+</p>
+</footer>
+<!-- Android Home Indicator Mockup -->
+<div class="mt-6 flex justify-center">
+<div class="w-32 h-1.5 bg-white/20 rounded-full"></div>
+</div>
+</div>
+<!-- Subtle Bottom Nav Component (Modified for Onboarding context) -->
+<div class="hidden absolute bottom-0 left-0 right-0 glass-panel border-t border-white/10 px-4 pb-3 pt-2 items-center justify-around">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-white/40" href="#">
+<span class="material-symbols-outlined">leaderboard</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-white/40" href="#">
+<span class="material-symbols-outlined">person</span>
+</a>
+</div>
+</div>
+</body></html>

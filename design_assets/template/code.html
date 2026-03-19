@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Strata - Templates</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#fa6000",
+                        "background-light": "#f8f6f5",
+                        "background-dark": "#23170f",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Lexend', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Header -->
+<header class="sticky top-0 z-30 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+<div class="flex items-center p-4 justify-between">
+<div class="flex size-10 shrink-0 items-center justify-center rounded-full bg-slate-200 dark:bg-slate-800">
+<span class="material-symbols-outlined text-slate-700 dark:text-slate-300">arrow_back</span>
+</div>
+<h1 class="text-xl font-bold leading-tight tracking-tight flex-1 text-center">Templates</h1>
+<div class="flex size-10 items-center justify-end">
+<span class="material-symbols-outlined text-slate-700 dark:text-slate-300">more_horiz</span>
+</div>
+</div>
+<!-- Search Bar -->
+<div class="px-4 pb-4">
+<label class="flex flex-col w-full">
+<div class="flex w-full items-center rounded-full bg-slate-200 dark:bg-slate-800/50 h-12 px-4 focus-within:ring-2 focus-within:ring-primary/50 transition-all">
+<span class="material-symbols-outlined text-slate-500 mr-2">search</span>
+<input class="w-full bg-transparent border-none focus:ring-0 text-base placeholder:text-slate-500 p-0" placeholder="Search templates..." type="text"/>
+<span class="material-symbols-outlined text-slate-500 ml-2">tune</span>
+</div>
+</label>
+</div>
+<!-- Horizontal Filter Chips -->
+<div class="flex gap-3 px-4 pb-4 overflow-x-auto hide-scrollbar">
+<div class="flex h-10 shrink-0 items-center justify-center gap-2 rounded-full bg-primary px-5 text-white shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-[20px]">bolt</span>
+<p class="text-sm font-semibold">All</p>
+</div>
+<div class="flex h-10 shrink-0 items-center justify-center gap-2 rounded-full bg-slate-200 dark:bg-slate-800 px-5 text-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined text-[20px]">directions_run</span>
+<p class="text-sm font-medium">Running</p>
+</div>
+<div class="flex h-10 shrink-0 items-center justify-center gap-2 rounded-full bg-slate-200 dark:bg-slate-800 px-5 text-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined text-[20px]">directions_bike</span>
+<p class="text-sm font-medium">Cycling</p>
+</div>
+<div class="flex h-10 shrink-0 items-center justify-center gap-2 rounded-full bg-slate-200 dark:bg-slate-800 px-5 text-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined text-[20px]">hiking</span>
+<p class="text-sm font-medium">Hiking</p>
+</div>
+<div class="flex h-10 shrink-0 items-center justify-center gap-2 rounded-full bg-slate-200 dark:bg-slate-800 px-5 text-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined text-[20px]">self_improvement</span>
+<p class="text-sm font-medium">Yoga</p>
+</div>
+</div>
+</header>
+<!-- Content Area -->
+<main class="flex-1 overflow-y-auto px-4 pb-24">
+<!-- Popular Section -->
+<section class="mt-4">
+<div class="flex justify-between items-end mb-4">
+<h2 class="text-xl font-bold tracking-tight">Popular</h2>
+<button class="text-primary text-sm font-semibold">See all</button>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<!-- Template Card 1 -->
+<div class="group relative aspect-[3/4] overflow-hidden rounded-xl bg-slate-200 dark:bg-slate-800">
+<img class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Close up of an athlete running on a paved road during sunrise" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4aCbSm2dgpGLTkscN65PTRZQ88s0OAZnbOYk-0OoKioLjlduCKp5gNToYMJ2JIGQ8D9O3RmwEysc5z0sb0vnRZJozRV6OONwTC59B_jTtBhEdh3lyQ547cMzNcCHrDoZDoqE8L1OCUxnrkBDI0lc34TCHeFB5XxEKYFEFDw_RIkqLJC8av70PXcYnXhrO5ZwcDYnJjmNgr6aqHxzbGLiCExx0y1BaJPCPEwIGiC_2frvZomC4n69e9ENHv0NeAAc2_OS9GXyzPyg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-3 left-3 right-3 flex items-center justify-between">
+<span class="text-white text-sm font-medium">Urban Dash</span>
+<button class="bg-primary p-1.5 rounded-full shadow-lg">
+<span class="material-symbols-outlined text-white text-[18px]">add</span>
+</button>
+</div>
+</div>
+<!-- Template Card 2 -->
+<div class="group relative aspect-[3/4] overflow-hidden rounded-xl bg-slate-200 dark:bg-slate-800">
+<img class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Cyclist riding on a winding mountain road" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB642JKdxuhfdMxkJ_fwXP--nRy52YKLfpPAreH6v90S302j2TxGnMvcCzXuZGj9z1xevVZSBw7z4GL99cIwO2Q37IvWmnz14RrOCdjkSn3rH-T7bpZ85fZRkL8iTDKum8f6kgk7CFLrEHDqgxpUl_OachULod7WzEooapMzZ7GZxkhsLZorEksnyMQXJ7Si9woadKtmCD9AdvImYngpj4WhQvAxqxJ4fDlxt6CaasAOm1IcrtAYqludJ9AE6FWDE3wY0ZsmOSvUhU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-3 left-3 right-3 flex items-center justify-between">
+<span class="text-white text-sm font-medium">Alpine Peak</span>
+<button class="bg-primary p-1.5 rounded-full shadow-lg">
+<span class="material-symbols-outlined text-white text-[18px]">add</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Scenic Section -->
+<section class="mt-8">
+<div class="flex justify-between items-end mb-4">
+<h2 class="text-xl font-bold tracking-tight">Scenic Views</h2>
+<button class="text-primary text-sm font-semibold">See all</button>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="group relative aspect-square overflow-hidden rounded-xl bg-slate-200 dark:bg-slate-800">
+<img class="h-full w-full object-cover" data-alt="Stunning mountain range reflected in a calm lake" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtQe5K1mkO4hfI3yw89JX9PXIlux4yICVRkp9pY8pAo8zeRisF8qxpNDfYlBHAKpaS28LlTDQFs1YHgL044esdy1S4cTTKlNetAvCHnzJ75cugOkLnjXfIfMlJ2qJbN2A4xnQIWb_Y2g-Y89MeC8QyBLEri-CuPr6Nq_bRFFtg2nDjwHnTEFu4uT2nfnWkXl61fAN_NjEa5f1fplzDJ9cez6krALR2P7l29vnsR_Vx54wZrw9KHF_vJQ4dmUwnNqqDhUA-RBKtb1s"/>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"></div>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="bg-primary px-4 py-2 rounded-full text-white text-xs font-bold">USE TEMPLATE</span>
+</div>
+</div>
+<div class="group relative aspect-square overflow-hidden rounded-xl bg-slate-200 dark:bg-slate-800">
+<img class="h-full w-full object-cover" data-alt="Lush green forest with sunbeams filtering through trees" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0VPfoXPDAy9YrBQCJuwz_1PXaWnheFyfx7JFVhekpB4uSlP9xo8c0L9mFhxx8Etoc7NO4lswIwsGgro-1ko5Lt7-jvqVU-eLBnVd1zUjZNzARJvIIPfatXjX1fVrdcCHQbeeH4_r0WwMjrAwUnr3wahsRIE5exEsbsBJZ176-p0mNiDx28g8TdTIuu002eTNQLyOS4elObiNNUu7kqMXfjtZRLuvxoxTh1E4JwNyQxB4JMk39oyVzMhksc37eF7mFgigetJV6wzU"/>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"></div>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="bg-primary px-4 py-2 rounded-full text-white text-xs font-bold">USE TEMPLATE</span>
+</div>
+</div>
+<div class="group relative aspect-square overflow-hidden rounded-xl bg-slate-200 dark:bg-slate-800">
+<img class="h-full w-full object-cover" data-alt="Aerial view of a dramatic rocky coastline and ocean" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApprOKFnVgB33ermDVK4vdgtO3moHpfsttK6pyWNuEi98rfV0swG-sRH0evgj--Ggj-WJ2IQQ0mLRA7iNEO1JYJV8O1lkuVNA8SH8E-QfMupWRfEKvKy47Sl1XwCbyDpqtx2mCIA0SC42bUpKpfs-UwUosY50UpHvyoF609OAQwo7AwnZ0btn3ks6bvf35p9I14j8LC1VmO0rXQyB0QY1qSy97Qu2TA_9JKSOT_Jk4nlgBcMbV6r2nLSHKVgjJeWeRyKbRRFmJ6OU"/>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"></div>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="bg-primary px-4 py-2 rounded-full text-white text-xs font-bold">USE TEMPLATE</span>
+</div>
+</div>
+<div class="group relative aspect-square overflow-hidden rounded-xl bg-slate-200 dark:bg-slate-800">
+<img class="h-full w-full object-cover" data-alt="Golden sunset over a peaceful meadow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDL3oKK-A1XhXOLIqADglDgfx_2zFL5eLeN5YKrPkl22CvgDf-sF9eiWM5cqdEIBApEcfqy-cEgOLITBiwfYen4cZIRO--ES2alvrvKV9J_BBc_bscGLYeEkFszilIAaqMWvFzUS0l7_F6AXSY6-JOaQ_IkaX1ZyGykURHMvlKjtXbtOlutM2azO7XoE1VJjcNgS_j6iLGYQhbnmOS4fhtiW-ghBci93IaWPrdUtdh0R449pnXavj0rWjN2ziIN7Mg3WiXzpR_4AGw"/>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"></div>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="bg-primary px-4 py-2 rounded-full text-white text-xs font-bold">USE TEMPLATE</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Minimalist Section -->
+<section class="mt-8">
+<h2 class="text-xl font-bold tracking-tight mb-4">Minimalist</h2>
+<div class="grid grid-cols-3 gap-3">
+<!-- Template Card 7 -->
+<div class="group relative aspect-[3/4] overflow-hidden rounded-lg bg-slate-200 dark:bg-slate-800 border-2 border-transparent hover:border-primary transition-all">
+<div class="h-full w-full bg-gradient-to-br from-slate-400 to-slate-600 dark:from-slate-700 dark:to-slate-900" data-alt="Abstract dark grey and black gradient background"></div>
+<div class="absolute bottom-2 left-2">
+<span class="text-[10px] text-white/70 font-bold uppercase tracking-widest">Noir</span>
+</div>
+</div>
+<!-- Template Card 8 -->
+<div class="group relative aspect-[3/4] overflow-hidden rounded-lg bg-slate-200 dark:bg-slate-800 border-2 border-transparent hover:border-primary transition-all">
+<div class="h-full w-full bg-gradient-to-tr from-orange-400 to-primary" data-alt="Vibrant orange and light orange gradient background"></div>
+<div class="absolute bottom-2 left-2">
+<span class="text-[10px] text-white/70 font-bold uppercase tracking-widest">Aura</span>
+</div>
+</div>
+<!-- Template Card 9 -->
+<div class="group relative aspect-[3/4] overflow-hidden rounded-lg bg-slate-200 dark:bg-slate-800 border-2 border-transparent hover:border-primary transition-all">
+<div class="h-full w-full bg-gradient-to-b from-blue-500 to-indigo-700" data-alt="Deep blue to indigo vertical gradient background"></div>
+<div class="absolute bottom-2 left-2">
+<span class="text-[10px] text-white/70 font-bold uppercase tracking-widest">Deep</span>
+</div>
+</div>
+<!-- Template Card 10 -->
+<div class="group relative aspect-[3/4] overflow-hidden rounded-lg bg-slate-200 dark:bg-slate-800 border-2 border-transparent hover:border-primary transition-all">
+<div class="h-full w-full bg-gradient-to-r from-emerald-400 to-teal-600" data-alt="Emerald green to teal horizontal gradient background"></div>
+<div class="absolute bottom-2 left-2">
+<span class="text-[10px] text-white/70 font-bold uppercase tracking-widest">Fresh</span>
+</div>
+</div>
+<!-- Template Card 11 -->
+<div class="group relative aspect-[3/4] overflow-hidden rounded-lg bg-slate-200 dark:bg-slate-800 border-2 border-transparent hover:border-primary transition-all">
+<div class="h-full w-full bg-gradient-to-br from-rose-400 to-pink-600" data-alt="Rose pink to deep pink diagonal gradient background"></div>
+<div class="absolute bottom-2 left-2">
+<span class="text-[10px] text-white/70 font-bold uppercase tracking-widest">Glow</span>
+</div>
+</div>
+<!-- Template Card 12 -->
+<div class="group relative aspect-[3/4] overflow-hidden rounded-lg bg-slate-200 dark:bg-slate-800 border-2 border-transparent hover:border-primary transition-all">
+<div class="h-full w-full bg-gradient-to-tl from-slate-200 to-slate-400 dark:from-slate-600 dark:to-slate-400" data-alt="Light grey to mid grey gradient background"></div>
+<div class="absolute bottom-2 left-2">
+<span class="text-[10px] text-white/70 font-bold uppercase tracking-widest">Mist</span>
+</div>
+</div>
+</div>
+</section>
+<!-- More Section -->
+<section class="mt-8 mb-8">
+<h2 class="text-xl font-bold tracking-tight mb-4">Activities</h2>
+<div class="grid grid-cols-2 gap-4">
+<div class="relative overflow-hidden rounded-xl aspect-video bg-slate-800">
+<img class="w-full h-full object-cover opacity-60" data-alt="Person performing yoga in a bright, modern studio" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6tmxwwP2N-5PbOcb15B97_lfqEVSnO6wXrmDftAhmOplVXwMmIP0jmJQRFnk1toad51MI-Pr6a73KYUasUqM4cftuXQSQvX962cIdwyQdSdGNUOgSLq6dwTrXIxt7DuBh1UCv-xHYDVZ4rli-P-W6Mw-bbLNydyAou1YhHZSNhPVdpV2FlH8fwUJFJ0y5j9D82RzSNUGlVrzNqwyZUlRsqpTWTpz8hRxKjCFQkSBqHNiuMyBtGj7XhhTWyaJCZcIa3S7eq3nX37I"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<h3 class="text-white font-bold text-lg">Yoga Studio</h3>
+</div>
+</div>
+<div class="relative overflow-hidden rounded-xl aspect-video bg-slate-800">
+<img class="w-full h-full object-cover opacity-60" data-alt="Close up of high tech gym equipment in a dark setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMwgE2wfkMPwNB7V8ur1-bLNEwydt0M4UXJeVYlHaEFeTmKY34D_uZFfctlbAjyIDnGmmUEpMB3rm3x4GChlsXpDKYAEux-X9z8R2MnXm-5nWXLsI4pdWedm-z58PW0GEQVHNg5kgWb9JeawLk6EX8Rv7Kw8bXdnAJfpGfs-wXUww8QdaL4dn1EVybLoxKcJCT4wDBua-bsQMFWjoFMVbITcy6dwQzsAbO5JL9XOxjgXRs-nNsuFMuEn5Wmx39Tlc8uta5hknm8Pc"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<h3 class="text-white font-bold text-lg">Iron Gym</h3>
+</div>
+</div>
+<div class="relative overflow-hidden rounded-xl aspect-video bg-slate-800">
+<img class="w-full h-full object-cover opacity-60" data-alt="Crossfit training equipment in a industrial style gym" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQN_QVMxlRihcvWFV5o2MpzhKOJfsaLzPP4Y1_4ppNSl7oYQ3cDNZdzxr-Mk5WuxlNGVr6PkhqFb8IK2TT-h6_zlCGZatHrhmXRDCzO-m0Y5PIm6S38i_5VdihQZNuDiCoUKHECD2x1V1yz4bI9rXQ3YQuqjd9CD5kSSYf2DOb8UREIcItNrN54qMRj6F3OO5-NGQD7jOJUvzsexSzxus-FSsfqJqLjukaIDufFUzGq5C6x0ZXrntBWrJq5eYDli8KqpUEVeaNS2Y"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<h3 class="text-white font-bold text-lg">High Tempo</h3>
+</div>
+</div>
+<div class="relative overflow-hidden rounded-xl aspect-video bg-slate-800">
+<img class="w-full h-full object-cover opacity-60" data-alt="Night time city street with blurred neon lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMcIO79_uGPFN6ACo1oJaW-orMQQjrCdGv9dLDTaW74E13sz3tU2wL1IFhH8gB04rlDgyzVzZBscG6YWLdAN3jPQWyhcrHB-HGgxl6cZVYKZ_HxLB_8caGBcFK1ihd7_mkASkubK3ihfUn9qO3MS3eRHlHyn5oeiEATveEqXZLxUO3pbzyPJkh65UtUG_UV76P-nWCgE4LxLXZAD5QiMluJgPfqrjH6zDhjIY-mZfwM7YU5LxZxoCnGjFYs1UbqnaHbw9L8_Ub6CI"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<h3 class="text-white font-bold text-lg">City Night</h3>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 bg-background-light dark:bg-background-dark border-t border-slate-200 dark:border-slate-800 px-2 pb-6 pt-2">
+<div class="flex justify-around items-center max-w-lg mx-auto">
+<a class="flex flex-col items-center gap-1 py-1 px-3 text-slate-500 dark:text-slate-400" href="#">
+<span class="material-symbols-outlined text-[24px]">home</span>
+<span class="text-[10px] font-medium leading-none">Feed</span>
+</a>
+<a class="flex flex-col items-center gap-1 py-1 px-3 text-slate-500 dark:text-slate-400" href="#">
+<span class="material-symbols-outlined text-[24px]">edit_note</span>
+<span class="text-[10px] font-medium leading-none">Editor</span>
+</a>
+<a class="flex flex-col items-center gap-1 py-1 px-3 text-primary" href="#">
+<span class="material-symbols-outlined text-[24px] fill-1">dashboard</span>
+<span class="text-[10px] font-bold leading-none">Templates</span>
+</a>
+<a class="flex flex-col items-center gap-1 py-1 px-3 text-slate-500 dark:text-slate-400" href="#">
+<span class="material-symbols-outlined text-[24px]">settings</span>
+<span class="text-[10px] font-medium leading-none">Settings</span>
+</a>
+</div>
+</nav>
+<style>
+        .fill-1 {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</body></html>

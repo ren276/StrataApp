@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Dark theme used as the post-splash theme so there is NO white flash
+         before Compose draws its own dark background. -->
+    <style name="Theme.Strata" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/splash_bg</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+    </style>
+
+    <style name="Theme.App.Starting" parent="Theme.SplashScreen">
+        <!-- Dark background so the OS-level splash matches our custom Compose splash -->
+        <item name="windowSplashScreenBackground">@color/splash_bg</item>
+        <!-- No animated icon — keep it blank, our Compose splash handles branding -->
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+        <item name="postSplashScreenTheme">@style/Theme.Strata</item>
+    </style>
+</resources>

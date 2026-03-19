@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Strata - 3D Transform Editor</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#fa6000",
+                        "background-light": "#f8f6f5",
+                        "background-dark": "#23170f",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+        .perspective-container {
+            perspective: 1000px;
+        }
+        .transformed-preview {
+            transform: rotateX(20deg) rotateY(-15deg) rotateZ(5deg);
+            transform-style: preserve-3d;
+        }
+        input[type="range"] {
+            -webkit-appearance: none;
+            appearance: none;
+            background: transparent;
+            cursor: pointer;
+        }
+        input[type="range"]::-webkit-slider-runnable-track {
+            background: #3a2e27;
+            height: 6px;
+            border-radius: 9999px;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            margin-top: -5px; 
+            background-color: #fa6000;
+            height: 16px;
+            width: 16px;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(250, 96, 0, 0.4);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-white overflow-hidden font-display">
+<!-- Background Editor Screen (Blurred & Transformed) -->
+<div class="relative flex h-screen w-full flex-col bg-background-light dark:bg-background-dark transition-all duration-500">
+<!-- Header Bar -->
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 justify-between border-b border-primary/10">
+<div class="text-white flex size-10 shrink-0 items-center justify-center rounded-full bg-primary/10">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+</div>
+<h2 class="text-white text-lg font-bold leading-tight tracking-tight flex-1 px-4">Workspace / Dashboard_v2</h2>
+<div class="flex items-center gap-2">
+<button class="flex items-center justify-center rounded-full h-10 w-10 bg-primary text-white">
+<span class="material-symbols-outlined">save</span>
+</button>
+</div>
+</div>
+<!-- Main Content Area (Visualized in 3D Perspective) -->
+<div class="flex-1 perspective-container flex items-center justify-center overflow-hidden p-8">
+<div class="transformed-preview w-full max-w-4xl grid grid-cols-1 md:grid-cols-3 gap-6 opacity-40 grayscale-[0.5] blur-[1px]">
+<!-- Stat Card 1 -->
+<div class="flex flex-col gap-4 rounded-xl p-8 border border-primary/20 bg-primary/5 backdrop-blur-sm shadow-2xl">
+<div class="flex justify-between items-start">
+<p class="text-primary/70 text-sm font-medium uppercase tracking-widest">Throughput</p>
+<span class="material-symbols-outlined text-primary/40">speed</span>
+</div>
+<p class="text-white tracking-tight text-4xl font-extrabold leading-tight">1.2 GB/s</p>
+<div class="flex items-center gap-2 text-[#0bda16] bg-[#0bda16]/10 w-fit px-3 py-1 rounded-full text-sm font-bold">
+<span class="material-symbols-outlined text-xs">trending_up</span>
+                        +5.2%
+                    </div>
+</div>
+<!-- Stat Card 2 -->
+<div class="flex flex-col gap-4 rounded-xl p-8 border border-primary/20 bg-primary/5 backdrop-blur-sm shadow-2xl transform translate-z-10">
+<div class="flex justify-between items-start">
+<p class="text-primary/70 text-sm font-medium uppercase tracking-widest">Active Users</p>
+<span class="material-symbols-outlined text-primary/40">groups</span>
+</div>
+<p class="text-white tracking-tight text-4xl font-extrabold leading-tight">14.2k</p>
+<div class="flex items-center gap-2 text-[#0bda16] bg-[#0bda16]/10 w-fit px-3 py-1 rounded-full text-sm font-bold">
+<span class="material-symbols-outlined text-xs">trending_up</span>
+                        +1.8%
+                    </div>
+</div>
+<!-- Stat Card 3 -->
+<div class="flex flex-col gap-4 rounded-xl p-8 border border-primary/20 bg-primary/5 backdrop-blur-sm shadow-2xl">
+<div class="flex justify-between items-start">
+<p class="text-primary/70 text-sm font-medium uppercase tracking-widest">Latency</p>
+<span class="material-symbols-outlined text-primary/40">timer</span>
+</div>
+<p class="text-white tracking-tight text-4xl font-extrabold leading-tight">12ms</p>
+<div class="flex items-center gap-2 text-[#fa3b38] bg-[#fa3b38]/10 w-fit px-3 py-1 rounded-full text-sm font-bold">
+<span class="material-symbols-outlined text-xs">trending_down</span>
+                        -0.4%
+                    </div>
+</div>
+<!-- Visual Grid Element -->
+<div class="col-span-full h-48 rounded-xl border border-primary/10 bg-primary/5 relative overflow-hidden">
+<div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 2px 2px, #fa6000 1px, transparent 0); background-size: 24px 24px;"></div>
+<div class="absolute bottom-4 left-6 flex items-baseline gap-2">
+<span class="text-xs text-primary font-mono tracking-tighter">RENDER_ENGINE_ID:</span>
+<span class="text-xs text-white/50 font-mono">STRATA_X_ALPHA_9</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Fake Bottom Nav (Background) -->
+<div class="flex gap-2 border-t border-primary/10 bg-background-dark px-4 pb-3 pt-2 opacity-50">
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-primary/50" href="#">
+<span class="material-symbols-outlined">edit</span>
+<p class="text-[10px] font-medium">Design</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-primary/50" href="#">
+<span class="material-symbols-outlined">play_circle</span>
+<p class="text-[10px] font-medium">Animate</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined">view_in_ar</span>
+<p class="text-[10px] font-medium">Transform</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-primary/50" href="#">
+<span class="material-symbols-outlined">ios_share</span>
+<p class="text-[10px] font-medium">Export</p>
+</a>
+</div>
+</div>
+<!-- 3D Transform Dialog Overlay -->
+<div class="fixed inset-0 z-50 flex flex-col justify-end pointer-events-none">
+<!-- Backdrop dim -->
+<div class="absolute inset-0 bg-background-dark/40 backdrop-blur-[2px]"></div>
+<!-- Sliding Panel -->
+<div class="relative w-full max-w-lg mx-auto bg-background-dark border-t border-x border-primary/30 rounded-t-xl p-6 pb-12 shadow-[0_-20px_50px_rgba(0,0,0,0.5)] pointer-events-auto">
+<!-- Handle -->
+<div class="flex w-full items-center justify-center mb-6">
+<div class="h-1.5 w-12 rounded-full bg-primary/20"></div>
+</div>
+<!-- Header -->
+<div class="flex items-center justify-between mb-8">
+<div class="flex items-center gap-3">
+<div class="bg-primary/20 p-2 rounded-full">
+<span class="material-symbols-outlined text-primary text-xl">3d_rotation</span>
+</div>
+<h1 class="text-white text-2xl font-bold tracking-tight">3D Transform</h1>
+</div>
+<button class="bg-primary/10 hover:bg-primary/20 text-white rounded-full p-2 transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Controls Grid -->
+<div class="space-y-8">
+<!-- X Rotation -->
+<div class="flex flex-col gap-3">
+<div class="flex justify-between items-center px-1">
+<label class="text-primary/70 text-sm font-bold uppercase tracking-widest flex items-center gap-2">
+<span class="material-symbols-outlined text-xs">line_axis</span> Rotation X
+                        </label>
+<span class="text-white font-mono text-sm bg-primary/10 px-3 py-1 rounded-full border border-primary/20">20°</span>
+</div>
+<input class="w-full" max="180" min="-180" type="range" value="20"/>
+</div>
+<!-- Y Rotation -->
+<div class="flex flex-col gap-3">
+<div class="flex justify-between items-center px-1">
+<label class="text-primary/70 text-sm font-bold uppercase tracking-widest flex items-center gap-2">
+<span class="material-symbols-outlined text-xs">line_axis</span> Rotation Y
+                        </label>
+<span class="text-white font-mono text-sm bg-primary/10 px-3 py-1 rounded-full border border-primary/20">-15°</span>
+</div>
+<input class="w-full" max="180" min="-180" type="range" value="-15"/>
+</div>
+<!-- Z Rotation -->
+<div class="flex flex-col gap-3">
+<div class="flex justify-between items-center px-1">
+<label class="text-primary/70 text-sm font-bold uppercase tracking-widest flex items-center gap-2">
+<span class="material-symbols-outlined text-xs">rotate_90_degrees_ccw</span> Rotation Z
+                        </label>
+<span class="text-white font-mono text-sm bg-primary/10 px-3 py-1 rounded-full border border-primary/20">5°</span>
+</div>
+<input class="w-full" max="180" min="-180" type="range" value="5"/>
+</div>
+<!-- Perspective (P) -->
+<div class="flex flex-col gap-3">
+<div class="flex justify-between items-center px-1">
+<label class="text-primary/70 text-sm font-bold uppercase tracking-widest flex items-center gap-2">
+<span class="material-symbols-outlined text-xs">zoom_in</span> Perspective (P)
+                        </label>
+<span class="text-white font-mono text-sm bg-primary/10 px-3 py-1 rounded-full border border-primary/20">1000px</span>
+</div>
+<input class="w-full" max="3000" min="100" type="range" value="1000"/>
+</div>
+</div>
+<!-- Footer Actions -->
+<div class="mt-10 flex flex-col gap-3">
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-full flex items-center justify-center gap-2 shadow-lg shadow-primary/20 active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined">restart_alt</span>
+                    Reset to Default
+                </button>
+<div class="flex gap-3 mt-2">
+<button class="flex-1 bg-white/5 hover:bg-white/10 text-white/70 font-medium py-3 rounded-full text-sm border border-white/10 transition-colors">
+                        Copy Matrices
+                    </button>
+<button class="flex-1 bg-white/5 hover:bg-white/10 text-white/70 font-medium py-3 rounded-full text-sm border border-white/10 transition-colors">
+                        Camera Lock
+                    </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Active Effect Indicator -->
+<div class="fixed top-20 right-8 z-[60] bg-primary text-white p-3 rounded-xl shadow-xl flex flex-col items-center gap-1 border-2 border-white/20">
+<span class="material-symbols-outlined animate-pulse">videocam</span>
+<span class="text-[8px] font-bold uppercase">Live Preview</span>
+</div>
+</body></html>

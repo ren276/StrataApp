@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Total Liberty Editor - Strata</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#fa6000",
+                        "background-light": "#f8f6f5",
+                        "background-dark": "#23170f",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+        .glass-panel {
+            background: rgba(35, 23, 15, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-white overflow-hidden">
+<!-- Main Canvas Area (Bottom Layer: Background Photo) -->
+<div class="relative h-screen w-full bg-cover bg-center overflow-hidden" data-alt="A cyclist riding on a scenic mountain road during sunset" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDrI0gz1sC1PHS-4MKnpWr6POsS8lpvvDYTU7ChYaTQDaxfqwRXBT10t0OdhLMnN0kcL55f8n2gDU8afFrsQ5lmry2T1lJqiuDVTQo17U4jLdPihqaqMjy6f5rM2xpsRQci5QEI3YOmWkG88hPu8eMFFy8Vpy_RqSEiH4qSKq4Bsg7r3-76rizt4JC1HqI7YEzSeKvkPvQuzerHQrcFBe6aSFUt4YowJjCDLBH78Wy2fOlwOGHdvNctl3jSe38dKPJsjRDMQD_O3ag');">
+<!-- Scrim for readability -->
+<div class="absolute inset-0 bg-black/30"></div>
+<!-- Top Navigation Bar -->
+<div class="absolute top-0 left-0 right-0 z-50 flex items-center justify-between p-6">
+<button class="bg-background-dark/40 backdrop-blur-md p-2 rounded-full border border-white/10">
+<span class="material-symbols-outlined block">close</span>
+</button>
+<h1 class="text-white font-bold text-lg tracking-tight">Total Liberty Editor</h1>
+<button class="bg-primary text-white px-6 py-2 rounded-full font-bold shadow-lg shadow-primary/20">
+                Save
+            </button>
+</div>
+<!-- Middle Layer: Stats Overlay (Positionable) -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="glass-panel p-8 rounded-xl border border-white/20 flex flex-col gap-4 max-w-xs w-full pointer-events-auto shadow-2xl">
+<div class="flex flex-col">
+<span class="text-white/60 text-xs font-medium uppercase tracking-widest">Morning Ride</span>
+<span class="text-white text-sm font-bold">Oct 12, 2023 • Marin Headlands</span>
+</div>
+<div class="h-[1px] bg-white/10 w-full"></div>
+<div class="grid grid-cols-1 gap-4">
+<div class="flex flex-col">
+<p class="text-white/70 text-sm font-medium">Distance</p>
+<p class="text-white text-4xl font-black leading-tight tracking-tight">42.5<span class="text-xl font-normal opacity-60 ml-1">km</span></p>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<p class="text-white/70 text-xs font-medium">Speed</p>
+<p class="text-white text-lg font-bold">28.4<span class="text-xs font-normal opacity-60 ml-0.5">km/h</span></p>
+</div>
+<div class="flex flex-col items-end text-right">
+<p class="text-white/70 text-xs font-medium">Time</p>
+<p class="text-white text-lg font-bold">1:32:05</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Top Layer: Editor UI (Control Panel) -->
+<div class="absolute bottom-0 left-0 right-0 z-50">
+<!-- Bottom Sheet Container -->
+<div class="bg-background-dark rounded-t-xl border-t border-white/10 pb-10 shadow-2xl max-h-[60vh] overflow-y-auto no-scrollbar p-5">
+<!-- Drag Handle -->
+<div class="flex justify-center mb-6">
+<div class="w-12 h-1.5 bg-white/20 rounded-full"></div>
+</div>
+<div class="space-y-6">
+<!-- Visibility Toggles -->
+<section>
+<h3 class="text-white/50 text-xs font-bold uppercase tracking-widest mb-4 px-2">Visibility</h3>
+<div class="flex flex-wrap gap-2"><button class="flex items-center gap-2 bg-primary text-white px-4 py-2.5 rounded-full font-medium text-sm transition-all">
+<span class="material-symbols-outlined text-sm">check_circle</span> Title
+                            </button>
+<button class="flex items-center gap-2 bg-white/5 text-white/60 px-4 py-2.5 rounded-full font-medium text-sm border border-white/5 transition-all">
+<span class="material-symbols-outlined text-sm">visibility</span> Date
+                            </button>
+<button class="flex items-center gap-2 bg-primary text-white px-4 py-2.5 rounded-full font-medium text-sm transition-all">
+<span class="material-symbols-outlined text-sm">check_circle</span> Icons
+                            </button>
+<button class="flex items-center gap-2 bg-primary text-white px-4 py-2.5 rounded-full font-medium text-sm transition-all">
+<span class="material-symbols-outlined text-sm">check_circle</span> Stats
+                            </button>
+<button class="flex items-center gap-2 bg-white/5 text-white/60 px-4 py-2.5 rounded-full font-medium text-sm border border-white/5 transition-all">
+<span class="material-symbols-outlined text-sm">visibility</span> Calories
+                            </button>
+<button class="flex items-center gap-2 bg-white/5 text-white/60 px-4 py-2.5 rounded-full font-medium text-sm border border-white/5 transition-all">
+<span class="material-symbols-outlined text-sm">visibility</span> HR
+                            </button>
+<button class="flex items-center gap-2 bg-white/5 text-white/60 px-4 py-2.5 rounded-full font-medium text-sm border border-white/5 transition-all">
+<span class="material-symbols-outlined text-sm">visibility</span> Cadence
+                            </button>
+<button class="flex items-center gap-2 bg-white/5 text-white/60 px-4 py-2.5 rounded-full font-medium text-sm border border-white/5 transition-all">
+<span class="material-symbols-outlined text-sm">visibility</span> Elevation
+                            </button></div>
+</section>
+<!-- Layout & Alignment Controls -->
+<div class="grid grid-cols-2 gap-6">
+<section>
+<h3 class="text-white/50 text-xs font-bold uppercase tracking-widest mb-4 px-2">Alignment</h3>
+<div class="flex bg-white/5 rounded-full p-1 border border-white/5">
+<button class="flex-1 flex items-center justify-center p-2 rounded-full bg-white/10 text-white">
+<span class="material-symbols-outlined">format_align_left</span>
+</button>
+<button class="flex-1 flex items-center justify-center p-2 rounded-full text-white/40">
+<span class="material-symbols-outlined">format_align_center</span>
+</button>
+<button class="flex-1 flex items-center justify-center p-2 rounded-full text-white/40">
+<span class="material-symbols-outlined">format_align_right</span>
+</button>
+</div>
+</section>
+<section>
+<h3 class="text-white/50 text-xs font-bold uppercase tracking-widest mb-4 px-2">Layout</h3>
+<div class="flex bg-white/5 rounded-full p-1 border border-white/5">
+<button class="flex-1 flex items-center justify-center p-2 rounded-full text-white/40">
+<span class="material-symbols-outlined">view_agenda</span>
+</button>
+<button class="flex-1 flex items-center justify-center p-2 rounded-full bg-primary text-white">
+<span class="material-symbols-outlined">view_column</span>
+</button>
+</div>
+</section>
+</div>
+<!-- Typography & Color Styling -->
+<section>
+<h3 class="text-white/50 text-xs font-bold uppercase tracking-widest mb-4 px-2">Styling</h3>
+<div class="flex items-center gap-4">
+<!-- Font Picker -->
+<div class="flex-1 overflow-x-auto no-scrollbar whitespace-nowrap flex items-center gap-3 pr-4 border-r border-white/10">
+<button class="text-sm font-bold bg-white text-background-dark px-4 py-2 rounded-full">Lexend Bold</button>
+<button class="text-sm font-medium text-white/60 px-4 py-2 rounded-full border border-white/10">Lexend Light</button>
+<button class="text-sm font-black text-white/60 px-4 py-2 rounded-full border border-white/10">Lexend Black</button>
+</div>
+<!-- Color Picker -->
+<div class="flex gap-2 items-center pl-2">
+<button class="size-8 rounded-full bg-white ring-2 ring-primary ring-offset-2 ring-offset-background-dark shadow-lg"></button>
+<button class="size-8 rounded-full bg-[#fa6000] shadow-md"></button>
+<button class="size-8 rounded-full bg-[#00d1ff] shadow-md"></button>
+<button class="size-8 rounded-full bg-[#70ff00] shadow-md"></button>
+</div>
+</div>
+</section>
+<!-- Scrim/Shadow Intensity Slider -->
+<section>
+<div class="flex items-center justify-between mb-2 px-2">
+<h3 class="text-white/50 text-xs font-bold uppercase tracking-widest">Background Overlay</h3>
+<span class="text-primary text-xs font-bold">40%</span>
+</div>
+<div class="relative w-full h-10 flex items-center">
+<div class="absolute w-full h-2 bg-white/5 rounded-full"></div>
+<div class="absolute w-[40%] h-2 bg-primary rounded-full"></div>
+<div class="absolute left-[40%] size-5 bg-white rounded-full shadow-lg border-2 border-primary -translate-x-1/2"></div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</div>
+</body></html>
