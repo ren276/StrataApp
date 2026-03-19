@@ -2,7 +2,7 @@
 
 **Strata** is a premium Android application designed for athletes who want to transform their Strava activities into beautiful, shareable stories. It combines real-time activity tracking with a powerful image editor and a secure cloud backend.
 
-![App Logo](app/src/main/res/drawable/logo.png) *(Ensure logo exists at this path)*
+![App Logo](app/src/main/res/drawable/logo.png) 
 
 ---
 
